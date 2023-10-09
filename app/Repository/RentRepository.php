@@ -44,7 +44,6 @@ class RentRepository
     return DB::table('rents')->where("$column", $value)->count();
   }
 
-
   public function create(array $payload)
   {
     $hasRegister = $this->findRegisterByParam('book_id_fk', $payload['book_id_fk']);
@@ -55,7 +54,6 @@ class RentRepository
 
     return $this->query->create($payload);
   }
-
 
   public function update(int $id, array $payload)
   {

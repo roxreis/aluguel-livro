@@ -44,7 +44,6 @@ class BookRepository
     return DB::table('books')->where("$column", $value)->count();
   }
 
-
   public function create(array $payload)
   {
     $hasRegister = $this->findRegisterByParam('book_name', $payload['book_name']);;
@@ -55,7 +54,6 @@ class BookRepository
 
     return $this->query->create($payload);
   }
-
 
   public function update(int $id, array $payload)
   {

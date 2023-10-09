@@ -3,7 +3,6 @@
 namespace App\Repository;
 
 use App\Models\User;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 
@@ -45,7 +44,6 @@ class UserRepository
     return DB::table('users')->where("$column", $value)->count();
   }
 
-
   public function create(array $payload)
   {
     $hasRegister = $this->findRegisterByParam('cpf', $payload['cpf']);;
@@ -56,7 +54,6 @@ class UserRepository
 
     return $this->query->create($payload);
   }
-
 
   public function update(int $id, array $payload)
   {
